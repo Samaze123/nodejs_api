@@ -4,7 +4,7 @@ const sql = require('mssql');
 
 async function getIngredients() {
 	try {
-		let pool = sql.connect(config);
+		let pool = await sql.connect(config);
 		let ingredients = await pool
 			.request()
 			.query('SELECT TOP 10 * FROM Ingredients');

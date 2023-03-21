@@ -18,6 +18,7 @@ router.use((request, response, next) => {
 
 // ADD HERE ROUTES
 router.route('/ingredients').get((request, response) => {
+	// response.json({ text: 'received' });
 	operations.getIngredients().then((result) => {
 		response.json(result[0]);
 	});
