@@ -6,7 +6,7 @@ set -euo pipefail
 resourceGroup="recipes-app-group"
 appName="recipes-app-dev3"
 storageName="recipesappstorage"
-location="WestEU" 
+location="westeurope" 
 
 # Change this if you are using your own github repository
 gitSource="https://github.com/Samaze123/nodejs_api.git"
