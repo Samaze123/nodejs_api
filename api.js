@@ -18,9 +18,22 @@ router.use((request, response, next) => {
 
 // ADD HERE ROUTES
 router.route('/ingredients').get((request, response) => {
-	// response.json({ text: 'received' });
 	operations.getIngredients().then((result) => {
 		response.json(result[0]);
+	});
+});
+
+router.route('/ingredient/:id').get((request, response) => {
+	operations.getIngredient(request.params.id).then((result) => {
+		response.json(result[0][0]);
+	});
+});
+
+router.route('/ingredient').post((request, response) => {
+	let ingredient = { ...request.body };
+	// console.log(`ingredient : ${ingredient} body : ${request.body}`);
+	operations.addIngredient(ingredient).then((result) => {
+		response.status(201).json(result);
 	});
 });
 
