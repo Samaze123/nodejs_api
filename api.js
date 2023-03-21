@@ -12,7 +12,7 @@ app.use('/api', router);
 
 router.use((request, response, next) => {
 	// Auth Should be here
-	console.log('received');
+	console.log('bonjour');
 	next();
 });
 
